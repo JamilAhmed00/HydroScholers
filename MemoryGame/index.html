@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- font-awesome -->
+    <script src="https://use.fontawesome.com/0856ab4841.js"></script>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <title>Memory Game</title>
+  </head>
+  <style>
+    .abc{
+      font-weight: 800;
+    }
+    .btn{
+      font-size: 20px;
+    }
+    .star{
+      color: red;
+    }
+  </style>
+  <body>
+    
+    <div class="container">
+      <header class="header">
+        <h1 >Hit Your Memory</h1>
+       
+        <p class="abc">Flip over two cards and try find a match</p>
+      </header>
+
+      <section class="score-panel">
+      	<h3 class="abc">Score Panel</h3>
+        <ul id="star-rating" class="star-rating">
+          <li class="star"><i class="fa fa-star"></i></li>
+          <li class="star"><i class="fa fa-star"></i></li>
+          <li class="star"><i class="fa fa-star"></i></li>
+        </ul>
+        <span class="moves-counter abc">0</span> Moves
+        <div class="timer-container">
+          <span class="timer abc"><i class="fa fa-hourglass-start"></i> Timer: 00:00</span>
+        </div>
+        <div class="reset">
+          <button class="btn reset-btn">Reset <i class="fa fa-repeat"></i></button>
+        </div>
+      </section>
+      
+      <!-- Modal -->
+      <section class="win-game-modal">
+        <div id="modal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Congratulations!</h2>
+            <p>You have won the game and found all 8 pairs of cards.</p>
+            <img class="modal-img" src="assets/img/Vault-Boy-Thumb-Up.jpg" alt="Vault boy giving the thumbs up from the game fall out">
+            <button class="btn play-again-btn">Play Again?</button>
+          </div>
+        </div>
+      </section>
+
+      <ul class="deck"></ul>
+    </div>
+
+   
+
+  <script src="assets/js/custom.js"></script>
+  </body>
+</html>

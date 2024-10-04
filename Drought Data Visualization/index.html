@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Global Drought Monitor</title>
+    <link rel="shortcut icon" type="image/png" href="/static/icons/favcon.ico" />
+
+    
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=1.0, minimum-scale=.5, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; EmulateIE8; IE=EmulateIE9">
+
+
+   
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+   
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    
+    <script src="https://unpkg.com/esri-leaflet@2.3.2/dist/esri-leaflet.js" integrity="sha512-6LVib9wGnqVKIClCduEwsCub7iauLXpwrd5njR2J507m3A2a4HXJDLMiSZzjcksag3UluIfuW1KzuWVI5n/cuQ==" crossorigin=""></script>
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+   
+    <link rel="stylesheet" href="/static/CSS/extension_CSS/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    
+
+   
+    <link rel="stylesheet" type="text/css" href="/static/CSS/extension_CSS/normalize.css">
+
+
+    
+    <script src="/static/JS/extension_JS/moment.min.js"></script>
+    <script src="/static/JS/extension_JS/twix.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="/static/CSS/extension_CSS/dygraph.css">
+    <script src="/static/JS/extension_JS/dygraph.js"></script>
+    
+    <script src="/static/JS/extension_JS/unzoom.js"></script>
+   
+    <script src="/static/JS/extension_JS/dygraph-extra.js"></script>
+
+
+    
+    <link rel="stylesheet" type="text/css" href="/static/CSS/primary_CSS/navbar.css">
+
+</head>
+
+<body>
+   
+
+<div class="topnav">
+    <div class="titleBar">
+        <a href="" target="_blank"><img class="" src="" alt=""></a>
+        <a href="/globalDM"><h1 class="titleText">Global Drought Monitor</h1></a>
+    </div>
+    
+    
+</div>
+
+    
+
+
+<link rel="stylesheet" type="text/css" href="/static/CSS/primary_CSS/globalDM.css">
+
+
+<div id="map"></div> 
+
+<div class="legendContainer"> <img class="legendImg" src="/static/icons/scale_SMI.png" alt="Scale of SMI"> </div>
+
+<!-- dropdown to switch between basemaps -->
+<div id="basemaps-wrapper" class="leaflet-bar">
+    <select id="basemaps">
+        <option value="Light" selected="selected">Light</option>
+        <option value="Dark">Dark</option>
+        <option value="Imagery">Imagery</option>
+    </select>
+</div>
+
+<div id="optionsPanel">
+    <!-- Buttons to switch between Animation and Overlay tabs -->
+    <button class="optionLabel" id="tab1" onclick="animation()">Animation</button>
+    <!-- <button class="optionLabel" id="tab2" onclick="overlays()">Overlays</button> -->
+
+    <!-- Overlay tab -->
+    <div id="overlays">
+        <div class="variable" style="grid-area: v1">
+            <input type="checkbox" id="SMI" class="overlayToggle" onclick="toggleSMI()" checked>
+            <label for="SMI" class="variableLabel">Soil Moisture Index</label><br>
+            <span><input type="range" class="overlaySlider" id="SMI_slider" min="1" max="9" value="7"></span>
+        </div>
+
+       
+        <div style="grid-area: v2; font-size: 14px; margin: auto"><i>More variables coming soon!</i></div>
+    </div>
+
+    <!-- Daily/Monthly toggle in Animation tab -->
+    <div class="toggle">
+        <input id="monthly" type="checkbox">
+            <span class="toggleHighlight"></span>
+        <label for="monthly" id="timestepLabel">Daily &nbsp&nbsp Monthly</label>
+    </div>
+
+    <!-- Animation tab -->
+    <div id="animation">
+        
+        <div class="labels">
+            <label class='animationLabel'>Start Date:</label><br>
+            <label class='animationLabel'>End Date:</label>
+        </div>
+
+        <div class="dropdowns" style="grid-area: dropdowns">
+            <select id="start_day" class="dateSelect"></select>
+            <select id="start_month" class="dateSelect"></select>
+            <select id="start_year" class="dateSelect"></select>
+            <br>
+            <select id="end_day" class="dateSelect"></select>
+            <select id="end_month" class="dateSelect"></select>
+            <select id="end_year" class="dateSelect"></select>
+        </div>
+
+        <button id="button1" class="button" name="button" onclick="setUpAnimation()">Update</button>
+
+        <!-- the 'play' and 'pause' button and slider-->
+        <div id="playPauseSlider">
+            <button id="play"><img src="/static/icons/play.png" alt="Play"></button>
+            <button id="pause"><img src="/static/icons/pause.png" alt="Pause"></button>
+
+            <!-- a 'range slider' for selecting which image in a range to display. note: 'value' shall be between 'min' and 'max'.-->
+            <div class="slidecontainer">
+                <input type="range" min="1" max="10" value="1" class="slider" id="slider">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<label id="imageLabel"></label>
+
+<div id="loadingMsg">Loading...</div>
+
+<div class="graph" id="timeGraph">
+
+    <div class="innerGraph">
+        <div id="graphImage"></div>  <!-- container for dygraph -->
+        <span class="closeGraph" id="graphX"> &times;</span> <!-- x symbol in top left -->
+        <!-- arrow symbol in top right -->
+        <span id="moveGraph"><img src="/static/icons/move.png"></span>
+    </div>
+
+    <!-- options at the bottom of the panel -->
+    <div id="graphInteract">
+        <!-- Log scale toggle button -->
+        <div id="log">
+            <input type="checkbox" id="logscale" onclick="logscale()">
+            <label for="logscale" id="loglabel">Log Scale (y-axis)</label>
+        </div>
+
+        <!-- Download CSV button -->
+        <form action="/createCSV" method="post">
+            <input type="submit" class="button" id="csv" value="Download CSV">
+            <!-- The following fields are used to communicate information between the client and server -->
+            <input id="latlng" name="latlng" style="display: none">
+        </form>
+    </div>
+
+</div>
+
+
+<!-- pop-up in bottom left to display the information about the page -->
+<div class='popup' id="infoPopup" onclick="infoPopup()"><img src="/static/icons/info.png" alt="Info">
+    <div class="popuptext" id="infoPopupText">To display a time series of soil moisture index data, click the map. To display other variable overlays, click the 'Overlays' tab. 
+        The slider adjusts the transparency of the overlay. To play an animation of SMI data, select a time range and press Update. You can toggle between daily and monthly timesteps 
+        in the top right corner. &#13;&#10; UFZ has developed or authored this drought monitoring tool. The information shared in this portal is open for public use. 
+        The contents of this portal are licensed under <a href="https://opensource.org/licenses/MIT" target="_blank">the MIT License </a></div>
+</div>
+
+
+<script src="/static/JS/primary_JS/globalDM.js"></script>
+<script src="/static/JS/primary_JS/timePickers.js"></script>
+
+
+
+
+
+</body>
+
+</html>

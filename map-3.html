@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDG 6 - China Overview</title>
+    <link rel="stylesheet" href="css/map-3.css">
+
+    <!-- Leaflet.js for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Chart.js for Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+   <header>
+      <h1 class="abc">China<img src="https://www.flagcolorcodes.com/images/webp/china.webp" alt="China Flag" class="icon"></h1>
+  </header>
+
+    <section id="map-section">
+        <div id="country-map">
+            <h2>Country Map - China</h2>
+            <div id="map"></div>
+        </div>
+        
+        <!-- Map Information Section -->
+        <div id="map-info">
+            <h2>Map Information</h2>
+            <p>This section provides insights about water resources and sanitation in China. Here, you can display specific statistics, region names, or relevant data linked to the map.</p>
+            
+            <h3>Key Locations:</h3>
+            <ul>
+                <li><b>Beijing:</b> Capital of China with population of 21 million.</li>
+                <li><b>Yangtze River:</b> The longest river in Asia.</li>
+                <li><b>Yellow River:</b> Key water source for northern China.</li>
+            </ul>
+            
+            <h3>Statistics:</h3>
+            <p><b>Population Affected by Water Scarcity:</b> 130 million (2019)</p>
+            <p><b>Water Access in Rural Areas:</b> 85%</p>
+        </div>
+       
+    </section>
+
+    <section id="charts">
+        <h2>Water Scarcity and Sanitation Overview</h2>
+
+        <!-- Existing chart containers -->
+        <div class="chart-container">
+            <h3>Water Scarcity</h3>
+            <canvas id="waterChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Sanitation Access</h3>
+            <canvas id="sanitationChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Water Pollution Levels</h3>
+            <canvas id="pollutionChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Rainwater Harvesting</h3>
+            <canvas id="harvestingChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Groundwater Levels</h3>
+            <canvas id="groundwaterChart"></canvas>
+        </div>
+    </section>
+    <!-- HTML !-->
+
+<!-- HTML !-->
+<button class="button-82-pushable" role="button">
+   <span class="button-82-shadow"></span>
+   <span class="button-82-edge"></span>
+   <span class="button-82-front text">
+    Recommended Project 
+   </span>
+ </button>
+ 
+ 
+
+    <script src="map-3.js"></script>
+</body>
+</html>

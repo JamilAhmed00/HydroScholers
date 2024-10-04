@@ -1,0 +1,60 @@
+{
+    "quizzes": [
+        {
+            "title": "CLEAR WATER AND SANITATION",
+            "icon": "./assets/images/icon-html.svg",
+            "questions": [
+                {
+                    "question": "What percentage of the world’s population currently suffers from water scarcity?",
+                    "options": [
+                        "10%",
+                        "25%",
+                        "33%",
+                        "50%"
+                    ],
+                    "answer": "33%"
+                },
+                {
+                    "question": "What are some consequences of climate change mentioned in the video?",
+                    "options": [
+                        "Increased rainfall and lush forests",
+                        "Droughts and floods",
+                        "Increased access to clean water",
+                        "Stable global temperatures"
+                    ],
+                    "answer": "Droughts and floods"
+                },
+                {
+                    "question": "Cynthia Koenig’s invention primarily helps with what issue?",
+                    "options": [
+                        "Purifying contaminated water",
+                        "Transporting water more efficiently",
+                        "Reducing water consumption in households",
+                        "Stable global temperatures"
+                    ],
+                    "answer": "Transporting water more efficiently"
+                },
+                {
+                    "question": "What is the impact of throwing oil down the sewage system?",
+                    "options": [
+                        "It cleans the sewage pipes",
+                        "It contaminates a large amount of water",
+                        "It helps in water purification.",
+                        "It has no significant impact."
+                    ],
+                    "answer": "It contaminates a large amount of water"
+                },
+                {
+                    "question": "How much water can one liter of oil contaminate?",
+                    "options": [
+                        "1000 Liters",
+                        "500 Liters",
+                        "2000 Liters",
+                        "5000 Liters"
+                    ],
+                    "answer": "500 Liters"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,591 @@
+/*This file contains the styling for globalDM.html page.*/
+
+/* basemap
+   ========================================================================== */
+/* sets the basemap to full screen excluding the navigation bar. The height of the navigation bar is '10vh'*/
+#map {
+    overflow: hidden;
+    height: 90vh;
+    z-index: 1;
+}
+
+/* this class comes from 'leaflet.css'. We are overwriting it because, in some 
+'-WebKit' browsers, the zoom-in function does not work properly with the default style. */
+.leaflet-container img.leaflet-image-layer {
+    max-width: none !important;
+    
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+    /* safari is still refusing :/ */
+}
+
+/* dropdown menu wrapper  */
+#basemaps-wrapper {
+    position: absolute;
+    top: 11%;
+    left: 50px;
+    z-index: 100;
+    background: white;
+    padding: 5px;
+    font-size: 12px;
+}
+
+/* dropdown menu to switch between basemaps */
+#basemaps {
+    min-width: 75px;
+}
+
+
+/* Map legend with SMI classes
+   ========================================================================== */
+/* container of SMI legend */
+.legendContainer {
+    position: absolute;
+    z-index: 100;
+    left: 3%;
+    bottom: 4%;
+    background: white;
+    opacity: 0.9;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px #4c6474;
+    /* browser-specific  style for 'box-shadow'. '-webkit-' for Chrome & Safari  and 'moz' for Firefox */
+    -webkit-box-shadow: 0 10px 15px #4c6474;
+    -moz-box-shadow: 0 10px 15px #4c6474;
+}
+
+/* SMI legend <img> */
+.legendImg {
+    height: auto;
+    width: 150px;
+}
+
+
+
+
+#loadingMsg {
+    position: fixed;
+    display: none;
+    z-index: 200;
+    top: 40%;
+    left: 42%;
+    width: 16%;
+    background-color: #b3b1a6;
+    border-radius: 5px;
+
+    box-shadow: 0 10px 20px #4c6474;
+    -webkit-box-shadow: 0 10px 15px #4c6474;
+    -moz-box-shadow: 0 10px 15px #4c6474;
+    
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+
+
+
+/* -----------------------OPTIONS PANEL FORMATTING--------------------*/
+#optionsPanel {
+    position: fixed;
+    top: 12%;
+    right: 10px;
+    width: 40%;
+    max-width: 475px;
+    min-width: 400px;
+    z-index: 100;
+    font-family: helvetica, sans-serif;
+    background-color: #ffffff;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 30px auto auto;
+    opacity: 0.9;
+    box-shadow: 0 10px 20px #4c6474;
+    /* browser specific  style for 'box-shadow'. '-webkit-' for Chrome & Safari  and 'moz' for Firefox */
+    -webkit-box-shadow: 0 10px 15px #4c6474;
+    -moz-box-shadow: 0 10px 15px #4c6474;
+}
+
+.optionLabel {
+    grid-row: 1;
+    cursor: pointer;
+    /* flex display with 'align' and 'justify' center the text horizontally and vertically*/
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #222222;
+    font: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-right: 2px solid #888888;
+}
+.optionLabel:active {
+    border-right: 2px solid #eeeeee;
+}
+
+#tab1 {
+    grid-column: 1;
+    border-top-left-radius: 5px;
+    background-color: #ffffff;
+}
+#tab2 {
+    grid-column: 2;
+    background-color: #b3b1a6;
+}
+
+#animation {
+    grid-row: 2;
+    grid-column: 1/4;
+    display: grid;
+    grid-template: "labels dropdowns update" 
+                   "slider slider slider" ;
+    grid-template-columns: 25% 50% 25%;
+    justify-items: center;
+    padding-top: 5px;
+}
+
+
+.toggle {
+    grid-column: 3;
+    grid-row: 1;
+    width: 80%;
+    height: 80%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin: auto;
+    border-radius: 15px;
+}
+
+#monthly {    /* hidden checkbox for daily/monthly toggle */
+    display: none;
+    width: 0;
+    height: 0;
+}
+
+#timestepLabel {  /* 'Daily  Monthly' label*/
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 15px;
+    cursor: pointer;
+    margin: auto;
+    z-index: 200;
+}
+
+
+.toggleHighlight {
+    grid-column: 3;
+    grid-row: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 30px;
+    width: 100%;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.toggleHighlight:before {  /* Grey sliding oval */
+  position: absolute;
+  content: "";
+  height: 75%;
+  width: 57px;
+  right: 52%;
+  bottom: 4px;
+  border-radius: 15px;
+  background-color: #b3b1a6;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+#monthly:checked + .toggleHighlight:before {
+    -webkit-transform: translateX(55px);
+    -ms-transform: translateX(55px);
+    transform: translateX(55px);
+}
+
+
+.labels {
+    grid-area: labels;
+    font: inherit;
+    left: 0
+}
+
+/* styles for labels of the inputs for date selection */
+.animationLabel {
+    font-size: 15px;
+    color: #222222;
+    font-family: sans-serif;
+    padding-left: 0.8rem;
+}
+
+#start_day,
+#end_day {
+    min-width: 45px;
+}
+
+.dateSelect {
+    background-color: #e8e5d8;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Animation 'update' button */
+.button {
+    grid-area: update;
+    font-size: 15px;
+    padding: 5px 10px 7px 10px;
+    border-radius: 9px;
+    margin: auto;
+    background: #e8e5d8;
+    cursor: pointer;
+}
+.button:hover {
+    background: linear-gradient(#b3b1a6, #e8e5d8);
+}
+
+
+
+#overlays {
+    grid-row: 3;
+    grid-column: 1/4;
+    display: none;
+    grid-template-areas: "v1 v2" 
+                        "v3 v4"
+                        'v5 v6';
+    grid-template-columns: 50% 50%;
+    padding: 5px;
+}
+
+.overlayToggle {
+    cursor: pointer;
+}
+
+.overlaySlider {
+    margin: 7px;
+    display: block;
+    width: 80%;
+}
+
+
+.variableLabel {
+    font-size: 16px;
+    cursor: pointer;
+    color: #222222;
+}
+
+
+
+/*'.tabContainer' for specific screen width: 600px */
+@media screen and (max-width: 600px) {
+    .tabContainer {
+        top: 17%;
+        left: 40%;
+        width: 15rem;
+    }
+}
+
+
+
+/*'.panelTabs' for specific screen width: 600px */
+@media screen and (max-width: 1080px) {
+    .panelTabs {
+        padding: 0.2rem 1rem;
+    }
+}
+
+
+
+/* label for the overlay map
+   ====================================================================== */
+/* the style for the label for overlay map when the page is loaded. */
+#imageLabel {
+    display: block;
+    text-align: center;
+    position: absolute;
+    z-index: 100;
+    top: 12%;
+    width: auto;
+    padding: 5px;
+    height: auto;
+    left: 42%;
+    font-size: 18px;
+    font-family: sans-serif;
+    color: #516677;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Moves imageLabel to bottom of screen if screen is too narrow */
+@media screen and (max-width: 900px) {
+    #imageLabel { 
+        top: 93%; 
+    }
+}
+
+
+
+/* range 'slider'
+   ========================================================================== */
+#playPauseSlider {
+    grid-area: slider;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 2%;
+    gap: 20px;
+}
+
+
+/* 'play' and 'pause' button
+============================================ */
+#play,
+#pause {
+    display: inline-block;
+    width: 6%;
+    background-color: Transparent;
+    border: none;
+}
+#pause {  /* initial settings for pause button */
+    display: none;
+    cursor: pointer;
+}
+    
+#play img,
+#pause img {
+    height: 1.4rem
+}   
+   
+   
+
+/* Slider bar =========================== */
+.slidecontainer {
+    width: 80%;
+    background-color: Transparent;
+    padding-bottom: 3%;
+    border: none;
+}
+
+#slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 0.7vh;
+    background: #005596;
+    outline: none;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+    border-radius: 12px;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0.9rem;
+    width: 0.9rem;
+    background: #005596;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 0.1rem solid #ffffff;
+}
+
+
+#slider::-moz-range-thumb {
+    height: 0.7rem;
+    width: 0.7rem;
+    background: #005596;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 0.1rem solid #ffffff;
+}
+
+
+#slider::-ms-track {
+    width: 300px;
+    height: 5px;
+    background: #005596; 
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-width: 6px 0;
+    border-color: transparent;
+}
+
+
+#slider::-ms-thumb {
+    height: 0.7rem;
+    width: 0.7rem;
+    border-radius: 2rem;
+    background: #005596;
+    border: 0.1rem solid #ffffff;
+    cursor: pointer;
+}
+
+
+
+
+/* on-map graph to display the time-series of the clicked pixel
+   ========================================================================== */
+
+.graph {
+    display: none;
+    position: fixed;
+    opacity: 0.93;
+    right: 10px;
+    bottom: 20px;
+    width: 500px;
+    z-index: 100;
+    border-radius: 5px;
+    background-color: #f7f7f5;
+    box-shadow: 0 10px 20px #4c6474;
+    /* browser specific  style for 'box-shadow'. '-webkit-' for Chrome & Safari  and 'moz' for Firefox */
+    -webkit-box-shadow: 0 10px 15px #4c6474;
+    -moz-box-shadow: 0 10px 15px #4c6474;
+}
+
+/* toggle this class - hide and show the graph */
+.graph .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+} 
+
+.innerGraph {
+    margin: 8px;
+    opacity: 0.93;
+    font-size: 15px;
+}
+
+.closeGraph {
+    display: block;
+    color: #656464;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    margin: auto;
+    z-index: 200;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeGraph:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#moveGraph {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 200;
+    opacity: 0.6;
+}
+#moveGraph:hover {
+    cursor: move;
+    opacity: 1;
+}
+
+
+
+#graphInteract  {
+    padding: 5px;
+    padding-left: 20px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: helvetica, sans-serif;
+    font-size: 15px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+
+/* pop-up to display the information about the page
+   ========================================================================== */
+/* pop-up icon styles*/
+.popup {
+    display: inline-block;
+    position: absolute;
+    z-index: 100;
+    width: 3%;
+    font-size: 0.5rem;
+}
+.popup img {
+    width: 1.5rem;
+    min-width: 20px;
+    cursor: pointer;
+}
+#infoPopup {
+    bottom: 0.2rem;
+    left: 5px;
+}
+#instructionsPopup {
+    top: 20vh;
+    left: 5px;
+}
+
+
+
+/*pop-up text, usually hidden. Shows up when clicked. */
+.popup .popuptext {
+    visibility: hidden;
+    width: 30rem;
+    background: #039BF5;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px 5px;
+    position: absolute;
+    z-index: 200;
+    opacity: 1;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#infoPopupText {
+    bottom: 0.4rem;
+    left: 0.9rem;
+    font-size: 0.8rem;
+}
+
+
+
+/* toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* add animation (fade in) */
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+
+    to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+
+    to { opacity: 1; }
+}
+

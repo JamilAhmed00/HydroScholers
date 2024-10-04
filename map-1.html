@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDG 6 - India Overview</title>
+    <link rel="stylesheet" href="css/map-1.css">
+
+    <!-- Leaflet.js for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Chart.js for Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="abc">India<img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="China Flag" class="icon"></h1>
+    </header>
+    
+
+    <section id="map-section">
+        <div id="country-map">
+            <h2>Country Map - India</h2>
+            <div id="map"></div>
+        </div>
+
+        <div id="map-info">
+            <h2>Information</h2>
+            <p>India faces significant challenges in water scarcity and sanitation access. This section provides data insights into these issues.</p>
+            <p><strong>Key Statistics:</strong></p>
+            <ul>
+                <li>Over 600 million people face high water stress.</li>
+                <li>Approximately 80% of wastewater is untreated.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="charts">
+        <h2>Water Scarcity and Sanitation Overview</h2>
+        <div class="chart-container">
+            <h3>Water Scarcity</h3>
+            <canvas id="waterChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Sanitation Access</h3>
+            <canvas id="sanitationChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Wastewater Treatment Percentage</h3>
+            <canvas id="wastewaterChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Access to Clean Drinking Water</h3>
+            <canvas id="cleanWaterChart"></canvas>
+        </div>
+
+        <div class="chart-container">
+            <h3>Annual Rainfall Trends</h3>
+            <canvas id="rainfallChart"></canvas>
+        </div>
+    </section>
+
+    
+    
+
+    <script src="map-1.js"></script>
+</body>
+</html>

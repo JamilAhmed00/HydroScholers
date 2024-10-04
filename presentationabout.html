@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HydroScholars</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Yantramanav:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+</head>
+<style>
+    .heading-1{
+   font-size: 30px;
+   color: mediumblue;
+    }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .video-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            background-color: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+        }
+
+        .video-description {
+            padding: 15px;
+            font-size: 16px;
+            color: #666;
+        }
+        .des-nav{
+            background-color:rgb(85, 11, 182);
+        }
+
+        .sdglogo {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, 
+        #490dd5,
+        #a30777, 
+        #7a12be, 
+        #34059a, 
+        #1a41d1
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    position: relative;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 3s ease-in-out forwards;
+}
+
+.sdglogo img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px; 
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem; 
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    margin-left: 400px;
+    background: linear-gradient(90deg, 
+        #a05bff, 
+        #6c2f91,
+        #a05bff, 
+        #6c2f91  
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    position: relative;
+    display: inline-block;
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ .div-2{
+    margin-top: -150px;
+ }
+
+.mno{
+    color: #8e2de2;
+  
+}
+
+
+.video-title {
+    
+        color: #fff;
+    background: linear-gradient(90deg, 
+        #a05bff, 
+        #6c2f91, 
+        #a05bff  
+    );
+   
+}
+
+.heading{
+    color: #950fe8;
+    text-decoration: underline;
+   
+
+}
+.line-1{
+    text-align: justify;
+   font-weight: bold;
+   color: #000;
+   background-color: rgb(241, 241, 234);
+}
+
+    </style>
+
+<body>
+     <!-- Spinner Start -->
+     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid des-nav px-5 d-none d-lg-block">
+        <div class="row gx-0 align-items-center" style="height: 45px;">
+            <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-flex justify-content-end">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white px-4 px-lg-5 py-3 py-lg-0">
+            <a href="#" class="navbar-brand p-0">
+
+
+                <h1 class="text-primary m-0 sdglogo">
+                    <img src="img/logo.png" alt="Logo">
+                    HydroScholars
+                </h1>
+                
+                
+            </a> 
+         
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid  py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                   
+                    <nav aria-label="breadcrumb">
+                        <img src="img/project up.png" alt="">
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-xxl py-5">
+        <div class="container  div-2">
+            <div class="row g-5">
+
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.3s">
+
+                    <h1 class="mb-4 animated-text mt-12">Introducing Home Made Water Filter</h1>
+
+                    <p class="mb-4 line-1">
+                        This project involves designing and building a simple, effective water filter using easily accessible materials. The goal is to create a cost-effective solution for purifying water at home. The filter typically uses a multi-layered approach, incorporating materials such as activated charcoal, sand, gravel, and coffee filters to remove impurities, sediments, and contaminants from the water. By constructing this filter, participants will gain hands-on experience in water purification methods and understand the principles of filtration, including adsorption, sedimentation, and biological filtration. This project not only demonstrates basic water treatment techniques but also emphasizes the importance of clean water for health and sustainability.
+                    </p>
+                    
+
+                    <h3 class="mb-4 heading">Introduction:</h3>
+                    <p class="mb-4 line-1">Begin with a discussion on the importance of clean water, how contaminants affect water quality, and the global challenges related to access to safe drinking water.
+
+                        Research: Students research different methods of water filtration (e.g., sand, gravel, activated charcoal, and UV light) and their effectiveness in removing various contaminants.
+                        
+                        Design: Students design a prototype of a water filtration system. They select materials based on their research and plan how each component will contribute to the filtration process.
+                        
+                        Construction: Using the materials (e.g., plastic bottles, sand, gravel, charcoal, cotton, and cheesecloth), students build their water filtration system.
+                        
+                        Testing: Students test their filtration systems using different types of “contaminated” water, such as muddy water or water with dissolved solids. They observe and record how well the filter cleans the water, noting any changes in clarity, smell, or taste.
+                        
+                        Analysis and Improvement: After testing, students analyze the results and discuss the effectiveness of their designs. They then make modifications to improve the filtration system's performance.
+                        
+                        Presentation: Students present their designs, the testing process, and the results, discussing what they learned about water filtration and clean water access.
+                        
+                        </p>
+
+                    <h3 class="mb-4 heading">Presentation: </h3>
+                    <p class="mb-4 line-1">Students present their designs, the testing process, and the results, discussing what they learned about water filtration and clean water access.
+                    </p>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+<div class="container-fluid my-5">
+    <div class="video-container">
+        <div class="video-title text mno">Presentation Demo</div>
+
+        <h1></h1>
+        <div class="video-wrapper">
+            <iframe width="560" height="300" src="https://www.youtube.com/embed/CDAMCpHdYBo?si=a3ZniTyO7nS5tUkp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+       
+        </div>
+        <div class="video-description">
+        </div>
+    </div>
+</div>
+
+ <!-- Copyright Start -->
+ <div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-md-0">
+                <span class="text-white"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>SDGs in classroom</a>, All right reserved.</span>
+            </div>
+            <div class="col-md-6 text-center text-md-end text-white">
+                Designed By <a class="border-bottom text-white" href=" ">Team Innovators</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

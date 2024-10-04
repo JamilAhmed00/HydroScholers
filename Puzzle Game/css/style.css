@@ -1,0 +1,26 @@
+﻿body {
+    
+
+
+    background: url('../img/download.jpeg');
+	/* font-family: "Open Sans", sans-serif; */
+	/*one Em roughly ten pixels (16 x 62.5% = 10)*/
+	font-size: 62.5%;
+	letter-spacing: 1.5px;
+	/* margin: 0; */
+	text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-family: 'Segoe UI', Calibri, Arial;
+    margin:0;
+}
+h2{
+    font-weight:normal;
+    text-align:center;
+}
+h3{
+    font-weight:normal;
+    margin:3px 0px;
+    text-align:center;
+}

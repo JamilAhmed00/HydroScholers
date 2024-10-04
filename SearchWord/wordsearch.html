@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+	<head>	
+		<meta charset="utf-8">
+		<title>Search The SDG Key !!!</title>
+		
+	</head>
+	<style>
+		.key{
+            font-size: 30px;
+			background-color: rgb(55, 55, 150);
+			color: white;
+			font-weight: bolder;
+		}
+		.theme{
+			font-size: 25px;
+			font-weight: bolder;
+			color: lightpink;
+		}
+		
+	</style>
+	<body>
+		<h1 class="key">Search The SDG Key !!!</h1>
+		<!-- <h2 id = "instructions"></h2> -->
+		<h3 id = "themeIntro" ><span class="theme">The theme is: </span><span id = "wordTheme"></span></h3>
+		
+		<button id = "newGameButton" class="b1" type = "button">New Game</button>
+		<div id = "wordboard"></div>
+		<div id = "wordlist"></div>
+		<button id = "solveButton" type = "button">See The Answers !!!</button>
+
+		<link rel = "stylesheet" type="text/css" href = "css/wordsearch.css">
+
+		<script src = https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
+
+		<script src = "js/wordpaths.js"></script>
+		<script src = "js/wordsearchcontroller.js"></script>
+		<script src = "js/wordsearchlogic.js"></script>
+		<script src = "js/wordsearchview.js"></script>
+
+		<script>	
+			$(document).ready( function() {
+				new WordSearchController("#wordboard", "#wordlist", "#solveButton", "#newGameButton", "#instructions", 
+					"#wordTheme");
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+/*This file contains the styling for nabvar.html*/
+
+
+/*Resets the pages default margin and padding for the entire HTML file and ignore browser-specific 'margin' and 'padding'.*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*forces <html> and <body> tags to take up 100% of the screen height and width*/
+html,
+body {
+    height: 100%;
+    width: 100%;
+    float: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    font-size: calc(0.5em + 1vw);
+}
+
+
+
+
+/* style of the navigation bar
+   ========================================================================== */
+
+/*container <div> for the navigation bar*/
+.topnav {
+    overflow: hidden;
+    height: 10vh;
+}
+
+/*container <title> and <img> for the navigation bar*/
+.titleBar {
+    height: 6vh;
+    background-image: -webkit-radial-gradient(#005596, #004173);
+    background-image: -moz-radial-gradient(#005596, #004173);
+    background-image: -o-radial-gradient(#005596, #004173);
+    background-image: radial-gradient(#005596, #004173);
+    width: 100%;
+    display: flex;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titleBar a {
+    text-decoration: none;
+    align-self: center;
+}
+
+/* style for the <img> in the navigation bar*/
+.UFZlogo {
+    height: min(8vh, 10vw);
+}
+
+
+/* style for the <title> in the navigation bar */
+.titleText {
+    font-size: min(3vh, 4vw);
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: white;
+    margin: auto;
+    position: relative;
+    right: 25px;
+}
+
+
+/*style for the container of navigation links */
+.navBar {
+    height: 4vh;
+    position: absolute;
+    background-image: linear-gradient(#737373, #404040);
+    width: 100%;
+}
+
+
+
+/* navigation links */
+.navBar a {
+    overflow: hidden;
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: min(1.5vh, 3vw);
+}
+
+/* Shrinks font size if screen is particularly narrow */
+@media only screen and (max-width:600px) {
+    .navBar a {
+        font-size: 0.65rem;
+    }
+}
+
+/* adds a font color to navigation links on hover */
+.navBar a:hover {
+    color: #6dcff6;
+}

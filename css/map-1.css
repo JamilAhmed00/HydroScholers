@@ -1,0 +1,72 @@
+/* General Styling */
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 50px;
+   box-sizing: border-box;
+   background-color: #fef8f8;
+}
+
+header {
+   background-color: #5099e7;
+   color: white;
+   padding: 20px;
+   text-align: center;
+}
+
+h1, h2, h3 {
+   margin: 10px 0;
+   text-align: center;
+   font-weight: 800;
+}
+
+section {
+   margin: 20px;
+}
+
+/* Flexbox Layout for Map and Information */
+#map-section {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+}
+
+#country-map {
+   flex: 2;
+   margin-right: 20px;
+}
+
+#map {
+   height: 400px;
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+#map-info {
+   flex: 1; 
+   background-color: #ffffff;
+   border: 1px solid #ddd;
+   padding: 15px;
+   height: 400px;
+   border-radius: 8px;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   overflow-y: auto; /* Add scrolling if content overflows */
+}
+
+.chart-container {
+   width: 100%;
+   max-width: 900px;
+   padding-top: 80px;
+   margin: 20px auto;
+}
+
+canvas {
+   height: 500px !important;
+   width: 900px !important;
+}
+.icon {
+   width: 100px;
+   height: auto;
+   vertical-align: middle;
+   padding-left: 20px;
+}
