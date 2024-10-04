@@ -1,10 +1,8 @@
 
 
-
-
 # HydroScholers
 
-**HydroScholers** is an innovative educational platform aimed at empowering high school students with knowledge and tools to understand and address water-related challenges, particularly in the context of the Sustainable Development Goals (SDG) 6, which focuses on ensuring availability and sustainable management of water and sanitation for all.
+**HydroScholers** is an innovative educational platform aimed at empowering high school students with knowledge and tools to understand and address water-related challenges, particularly in the context of the Sustainable Development Goals (SDG) 6, which focuses on ensuring the availability and sustainable management of water and sanitation for all.
 
 ## Project Objectives
 
@@ -20,8 +18,6 @@ To create a generation of informed, empowered, and engaged individuals capable o
 ## Motto
 
 **"Empowering the Next Generation to Solve Water Challenges."**
-**"Learn Today. Sustain Tomorrow."**
-
 
 ## Features
 
@@ -40,6 +36,10 @@ To create a generation of informed, empowered, and engaged individuals capable o
 - **NASA EIONET API Integration**: Real-time data fetching from NASA's EIONET API to visualize drought conditions and other water-related crises effectively.
 
 - **High-Level NASA Resource Integration**: Access to resources connected with NASA Aqua Earth satellites for real-time observations of water resources.
+
+## Live Demo
+
+Check out the live demo of **HydroScholers** at [HydroScholers Live](https://delightful-sorbet-7ae7eb.netlify.app/).
 
 ## Getting Started
 
