@@ -39,7 +39,7 @@ To create a generation of informed, empowered, and engaged individuals capable o
 
 ## Live Demo
 
-Check out the live demo of **HydroScholers** at [HydroScholers Live](https://delightful-sorbet-7ae7eb.netlify.app/).
+Check out the live demo of **HydroScholers** at [HydroScholers Live]([https://delightful-sorbet-7ae7eb.netlify.app/](https://hydroscholersbd00.netlify.app/)).
 
 ## Getting Started
 
